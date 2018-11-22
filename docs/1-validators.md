@@ -8,6 +8,16 @@ Checks to make sure that a values length falls within a certain range.
 | max     | Yes      | number  | The maximum length of the value     |
 | message | No       | string  | Explanation of the validation error |
 
+## Contains Validator
+Checks to make sure that the value contains what we're matching.
+
+### Options
+| Name        | Required | Type            | Description                                    |
+|-------------|----------|-----------------|------------------------------------------------|
+| match       | Yes      | string, number  | The value that we're trying to match.          |
+| insensitive | No       | boolean         | Tells whether to do a case-insensitive search. |
+| message     | No       | string          | Explanation of the validation error            |
+
 ## Range Validator
 Checks to make sure that a value falls within a certain range.
 
