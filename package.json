@@ -16,7 +16,7 @@
     "Constraints"
   ],
   "author": "Chris Butcher",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/c-butcher/open-data-validators/issues"
   },
