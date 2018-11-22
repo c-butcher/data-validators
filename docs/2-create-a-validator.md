@@ -21,38 +21,24 @@ so long as it has a `message` property.
 ### Creating the Validator
 
 ```javascript
-const { Validator } = require('open-data-validators');
+const { Validator, ValidationError } = require('open-data-validators');
 
-class Contains extends Validator {
+class Length extends Validator {
+
     constructor(options) {
-        super('contains', options);
-    }
-    
-    defaults() {
-        return {
-            match: null,
-            message: 'Property must contain {match}'
-        };
+        super('length', options);
     }
 
     validate(value) {
         let errors = [];
-        let isError = true;
+        let isError = false;
 
-        if (!this.options.match) {
-            throw new Error('Match option must contain a value.');
+        if (value.length < this.options.min) {
+            isError = true;
         }
-        
-        if (typeof value === 'string') {
-            isError = !value.match(this.options.match);
-        }
-        
-        else if (typeof value === 'number') {
-            isError = !value.toString().match(this.options.match);
-        }
-        
-        else if (Array.isArray(value)) {
-            isError = value.includes(value);
+
+        if (value.length > this.options.max) {
+            isError = true;
         }
         
         if (isError) {
@@ -60,13 +46,13 @@ class Contains extends Validator {
                 this.options.message,
                 this.options
             );
-            
-            errors.push(error);
+    
+            errors.push(error);            
         }
-
+        
         return errors;
     }
 }
 
-module.exports = Contains;
+module.exports = Length;
 ```
