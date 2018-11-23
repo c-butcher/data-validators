@@ -36,7 +36,7 @@ Checks to make sure that a value falls within a specific set of acceptable value
 |----------------|----------|---------|---------------------------------------------------------------|
 | values         | Yes      | array   | List of the acceptable values                                 |
 | insensitive    | No       | boolean | Tells whether to do a case-insensitive search                 |
-| containsValue  | No       | boolean | Only passes validation when the supplied value is in our list |  |
+| containsValue  | No       | boolean | Only passes validation when the supplied value is in our list |
 | message        | No       | string  | Explanation of the validation error                           |
 
 ## Zip Code Validator

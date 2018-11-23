@@ -1,11 +1,11 @@
 class ValidationError {
     constructor(message, params = {}) {
         if (typeof message !== 'string') {
-            throw new ValidationError("Argument 'message' must be a string.");
+            throw new Error("Argument 'message' must be a string.");
         }
 
         if (typeof params !== 'object') {
-            throw new ValidationError("Argument 'params' must be an object.");
+            throw new Error("Argument 'params' must be an object.");
         }
 
         this.message = message;

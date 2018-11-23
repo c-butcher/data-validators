@@ -71,7 +71,6 @@ describe('Validator', function() {
     describe('check(value, name, options)', function() {
         it('passes when value matches criteria', function() {
             let errors = Validator.check(50, 'range', {
-                enabled: true,
                 min: 0,
                 max: 100,
             });
@@ -81,7 +80,6 @@ describe('Validator', function() {
 
         it('fails when value does not match criteria', function() {
             let errors = Validator.check(250, 'range', {
-                enabled: true,
                 min: 0,
                 max: 100,
                 message: 'Number must be between {min} - {max}',
