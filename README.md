@@ -1,7 +1,7 @@
 # Data Validators
 
-![Build Status](https://travis-ci.com/c-butcher/data-validators.svg?branch=master)
-![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+[![Build Status](https://travis-ci.com/c-butcher/data-validators.svg?branch=master)](https://travis-ci.com/c-butcher/data-validators)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://travis-ci.com/c-butcher/data-validators)
 
 ### Installation
 
