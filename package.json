@@ -4,7 +4,7 @@
   "description": "Validators that help make sure your data follow specific constraints.",
   "main": "main.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --recursive"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
