@@ -1,7 +1,7 @@
 {
   "name": "data-validators",
   "version": "1.0.0",
-  "description": "Validators for the open data management system.",
+  "description": "Validators that help make sure your data follow specific constraints.",
   "main": "main.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha --recursive"
