@@ -1,5 +1,5 @@
 const chai = require('chai');
-const { Validator, ValidationError } = require('../../main');
+const Validator = require('../../src/validator');
 
 describe('Length Validator', function() {
     it('exists and is accessible', function() {
