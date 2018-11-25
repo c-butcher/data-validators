@@ -1,44 +1,46 @@
 const chai = require('chai');
-const Validator = require('../../src/validator');
+const Choice = require('../../src/validators/choice');
 
 describe('Choice Validator', function() {
-    it('exists and is accessible', function() {
-        chai.assert.isOk(Validator.types().has('choice'));
-    });
 
     it('passes when value is within the acceptable values', function() {
-        let errors = Validator.check('Hello', 'choice', {
+        let choice = new Choice({
             values: ['Hello', 'World']
         });
+
+        let errors = choice.validate('Hello');
 
         chai.assert.equal(errors.length, 0);
     });
 
     it('fails when the value is not in the acceptable values', function() {
-        let errors = Validator.check('Non-Existent Key', 'choice', {
+        let choice = new Choice({
             values: ['Hello', 'World'],
-            message: 'Your choice must be one of the following {values}'
         });
+
+        let errors = choice.validate('Non-Existent Key');
 
         chai.assert.equal(errors.length, 1);
     });
 
     it('passes when enabling error on matches.', function() {
-        let errors = Validator.check('Hello', 'choice', {
+        let choice = new Choice({
             values: ['Hello', 'World'],
             errorOnMatch: true,
-            message: 'Your choice must be one of the following {values}'
         });
+
+        let errors = choice.validate('Hello');
 
         chai.assert.equal(errors.length, 1);
     });
 
     it('passes with case insensitive matches.', function() {
-        let errors = Validator.check('hello', 'choice', {
+        let choice = new Choice({
             values: ['Hello', 'World'],
             insensitive: true,
-            message: 'Your choice must be one of the following {values}'
         });
+
+        let errors = choice.validate('hello');
 
         chai.assert.equal(errors.length, 0);
     });

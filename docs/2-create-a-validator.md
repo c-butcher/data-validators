@@ -21,7 +21,7 @@ so long as it has a `message` property.
 ### Creating the Validator
 
 ```javascript
-const { Validator, ValidationError } = require('open-data-validators');
+const { Validator, ValidationError } = require('data-validators');
 
 class Length extends Validator {
 

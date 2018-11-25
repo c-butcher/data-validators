@@ -1,26 +1,25 @@
 const chai = require('chai');
-const Validator = require('../../src/validator');
+const Length = require('../../src/validators/length');
 
 describe('Length Validator', function() {
-    it('exists and is accessible', function() {
-        chai.assert.isOk(Validator.types().has('length'));
-    });
-
     it('passes when value is within the given length', function() {
-        let errors = Validator.check('7 Chars', 'length', {
+        let length = new Length({
             min: 5,
             max: 10,
         });
+
+        let errors = length.validate('7 Chars');
 
         chai.assert.equal(errors.length, 0);
     });
 
     it('fails when the value is outside of the given length', function() {
-        let errors = Validator.check('This is way longer than 10 characters.', 'length', {
+        let length = new Length({
             min: 5,
             max: 10,
-            message: 'Length must be in-between {min} and {max}.'
         });
+
+        let errors = length.validate('This is way longer than 10 characters.');
 
         chai.assert.equal(errors.length, 1);
     });

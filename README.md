@@ -1,5 +1,11 @@
-# Open Data Validators
+# Data Validators
 
+
+### Installation
+
+```bash
+> npm install --save data-validators 
+```
 
 ### Using the Validator Service
 
@@ -7,7 +13,7 @@ We have a validation service that helps to manage and execute the wide range
 of validators that we have. You can get the service by requiring it from our module...  
 
 ```javascript
-const { Validator } = require('open-data-validators');
+const { Validator } = require('data-validators');
 ```
 
 With the `Validator` service we can `check()` the value below to make sure that
@@ -29,7 +35,7 @@ console.log(errors); // outputs: ['Value must be in-between 0 and 100']
 You can also get and execute a single validator from our module...
 
 ```javascript
-const { Range } = require('open-data-validators');
+const { Range } = require('data-validators');
 
 let range = new Range({
     min: 0,

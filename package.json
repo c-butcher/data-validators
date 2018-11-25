@@ -1,5 +1,5 @@
 {
-  "name": "open-data-validators",
+  "name": "data-validators",
   "version": "1.0.0",
   "description": "Validators for the open data management system.",
   "main": "main.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/c-butcher/open-data-validators.git"
+    "url": "git+https://github.com/c-butcher/data-validators.git"
   },
   "keywords": [
     "Validation",
@@ -18,9 +18,9 @@
   "author": "Chris Butcher",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/c-butcher/open-data-validators/issues"
+    "url": "https://github.com/c-butcher/data-validators/issues"
   },
-  "homepage": "https://github.com/c-butcher/open-data-validators#readme",
+  "homepage": "https://github.com/c-butcher/data-validators#readme",
   "dependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0"
