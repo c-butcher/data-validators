@@ -1,6 +1,9 @@
 language: javascript
+sudo: false
 node_js:
-  - "iojs"
-  - "7"
+  - "6"
+  - "8"
+  - "10"
+  - "11"
 before_install:
   - npm i -g npm@6.4.1
