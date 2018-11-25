@@ -1,6 +1,10 @@
 # Data Validators
 
 
+|   |                                                                                   |   |
+|---|:---------------------------------------------------------------------------------:|---|
+|   |![Build Status](https://travis-ci.com/c-butcher/data-validators.svg?branch=master) |   |
+
 ### Installation
 
 ```bash
