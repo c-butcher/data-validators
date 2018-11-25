@@ -1,9 +1,6 @@
 language: javascript
 sudo: true
 node_js:
-  - "6"
-  - "8"
-  - "10"
   - "11"
 before_install:
   - npm install -g mocha@^5.2.0
