@@ -11,7 +11,7 @@ class Choice extends Validator {
         let errors = [];
 
         if (!Array.isArray(this.options.values)) {
-            throw new Error('Values option must be an array.');
+            throw new ValidationError('Values option must be an array.');
         }
 
         // When doing an insensitive search, convert everything to lowercase

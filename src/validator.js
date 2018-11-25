@@ -1,23 +1,25 @@
+const ValidationError = require('../src/validation-error');
+
 let validators = new Map();
 
 class Validator {
 
     constructor(name, options = {}) {
         if (this.constructor === Validator) {
-            throw new Error('Abstract class Sanitizer cannot be called directly.');
+            throw new ValidationError('Abstract class Sanitizer cannot be called directly.');
         }
 
         if (typeof this.validate !== 'function') {
-            throw new Error('Abstract class Validator must implement a validate() method.')
+            throw new ValidationError('Abstract class Validator must implement a validate() method.')
         }
 
         if (typeof options !== 'object') {
-            throw new Error('Options argument must be an object.');
+            throw new ValidationError('Options argument must be an object.');
         }
 
         let defaults = this.defaults();
         if (typeof defaults !== 'object') {
-            throw new Error('Validators defaults() method must return an object.');
+            throw new ValidationError('Validators defaults() method must return an object.');
         }
 
         this.name = name;
@@ -43,14 +45,16 @@ class Validator {
      */
     static add(name, validator) {
         if (typeof name !== 'string') {
-            throw new Error('Name argument must be a string.');
+            throw new ValidationError('Name argument must be a string.');
         }
 
         if (typeof validator !== 'function') {
-            throw new Error('Validator argument must be a function that implements OpenData.Schema.Field.Validator.');
+            throw new ValidationError('Validator argument must be a function that implements OpenData.Schema.Field.Validator.');
         }
 
         validators.set(name, validator);
+
+        return this;
     }
 
     /**

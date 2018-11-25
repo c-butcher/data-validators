@@ -1,5 +1,5 @@
 const chai = require('chai');
-const { ValidationError } = require('../main');
+const ValidationError = require('../src/validation-error');
 
 describe('Validation Error', function() {
 

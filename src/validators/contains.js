@@ -19,7 +19,7 @@ class Contains extends Validator {
         let isError = true;
 
         if (!this.options.match) {
-            throw new Error('Match option must contain a value.');
+            throw new ValidationError('Match option must contain a value.');
         }
 
         if (this.options.insensitive) {

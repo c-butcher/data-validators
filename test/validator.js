@@ -1,7 +1,16 @@
+const mocha = require('mocha');
 const chai = require('chai');
-const { Validator, Length } = require('../main');
+
+const Validator = require('../src/validator');
+const Length = require('../src/validators/length');
 
 describe('Validator', function() {
+
+    before(function() {
+        Validator
+            .add('length', require('../src/validators/length'))
+            .add('range', require('../src/validators/range'));
+    });
 
     describe('constructor(options)', function() {
         it('passes when supplied argument is an object', function() {
