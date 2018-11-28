@@ -9,23 +9,47 @@ class Range extends Validator {
 
     validate(value) {
         let errors = [];
+        let isError = false;
 
-        if (value < this.options.min) {
-            let error = new ValidationError(
-                this.options.message,
-                this.options
-            );
+        if (typeof value === 'string') {
+            value = parseFloat(value);
 
-            errors.push(error);
+            if (isNaN(value)) {
+                errors.push(new ValidationError(
+                    this.options.message,
+                    this.options
+                ));
+
+                return errors;
+            }
         }
 
-        if (value > this.options.max) {
-            let error = new ValidationError(
+        if (value instanceof Date) {
+            value = value.getTime();
+        }
+
+        if (typeof value !== 'number') {
+            errors.push(new ValidationError(
                 this.options.message,
                 this.options
-            );
+            ));
 
-            errors.push(error);
+            return errors;
+        }
+
+        if (typeof this.options.min === 'number' && value < this.options.min) {
+            isError = true;
+        }
+
+        if (typeof this.options.max === 'number' && value > this.options.max) {
+            isError = true;
+        }
+
+        if (isError) {
+            errors.push(new ValidationError(
+                this.options.message,
+                this.options
+            ));
         }
 
         return errors;
