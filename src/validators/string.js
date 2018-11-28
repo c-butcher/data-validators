@@ -38,6 +38,10 @@ class String extends Validator {
             errors.push(...this.constructor.check(value, 'contains', this.options.contains));
         }
 
+        if ((typeof value === 'object' || typeof value === 'function') && value !== null) {
+            isError = true;
+        }
+
         if (isError) {
             let error = new ValidationError(
                 this.options.message,

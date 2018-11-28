@@ -31,4 +31,34 @@ describe('String Validator', function() {
 
         chai.assert.equal(errors.length, 0);
     });
+
+    it('passed when value is a number', function() {
+        let string = new String({
+            required: false
+        });
+
+        let errors = string.validate(123);
+
+        chai.assert.equal(errors.length, 0);
+    });
+
+    it('fails when object is supplied', function() {
+        let string = new String({
+            required: true
+        });
+
+        let errors = string.validate({name: 'Jack Bauer'});
+
+        chai.assert.equal(errors.length, 1);
+    });
+
+    it('fails when function is supplied', function() {
+        let string = new String({
+            required: true
+        });
+
+        let errors = string.validate(() => {});
+
+        chai.assert.equal(errors.length, 1);
+    });
 });
