@@ -38,6 +38,17 @@ describe('Range Validator', function() {
         chai.expect(date).to.be.instanceOf(Date);
     });
 
+    it('passes when the min and max options are strings', function() {
+        let range = new Range({
+            min: '0',
+            max: '100',
+        });
+
+        let errors = range.validate(50);
+
+        chai.assert.equal(errors.length, 0);
+    });
+
     it('fails when the value is a number and above the maximum', function() {
         let range = new Range({
             min: 0,
