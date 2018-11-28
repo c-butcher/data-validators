@@ -11,51 +11,61 @@ describe('Number Validator', function() {
     });
 
     it('passes when number is supplied', function() {
-        let string = new Number({
+        let number = new Number({
             required: false
         });
 
-        let errors = string.validate(12345);
+        let errors = number.validate(12345);
 
         chai.assert.equal(errors.length, 0);
     });
 
     it('fails when string is supplied', function() {
-        let string = new Number({
+        let number = new Number({
             required: false
         });
 
-        let errors = string.validate("Hello World");
+        let errors = number.validate("Hello World");
 
         chai.assert.equal(errors.length, 1);
     });
 
     it('fails when boolean is supplied', function() {
-        let string = new Number({
+        let number = new Number({
             required: false
         });
 
-        let errors = string.validate(true);
+        let errors = number.validate(true);
 
         chai.assert.equal(errors.length, 1);
     });
 
     it('fails when object is supplied', function() {
-        let string = new Number({
+        let number = new Number({
             required: false
         });
 
-        let errors = string.validate({ name: 'Jack Bauer' });
+        let errors = number.validate({ name: 'Jack Bauer' });
 
         chai.assert.equal(errors.length, 1);
     });
 
     it('fails when function is supplied', function() {
-        let string = new Number({
+        let number = new Number({
             required: false
         });
 
-        let errors = string.validate(() => {});
+        let errors = number.validate(() => {});
+
+        chai.assert.equal(errors.length, 1);
+    });
+
+    it('fails when required and is empty', function() {
+        let number = new Number({
+            required: true
+        });
+
+        let errors = number.validate(null);
 
         chai.assert.equal(errors.length, 1);
     });
