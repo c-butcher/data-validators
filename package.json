@@ -1,6 +1,6 @@
 {
   "name": "data-validators",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Validators that help make sure your data follow specific constraints.",
   "main": "main.js",
   "scripts": {
