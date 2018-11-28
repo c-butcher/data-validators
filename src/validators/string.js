@@ -38,7 +38,7 @@ class String extends Validator {
             errors.push(...this.constructor.check(value, 'contains', this.options.contains));
         }
 
-        if ((typeof value === 'object' || typeof value === 'function') && value !== null) {
+        if (value !== null && typeof value !== 'string') {
             isError = true;
         }
 
