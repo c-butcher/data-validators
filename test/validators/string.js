@@ -12,27 +12,17 @@ describe('String Validator', function() {
             .add('contains', Contains);
     });
 
-    it('passes when value is null and not required', function() {
+    it('passes when a string is supplied', function() {
         let string = new String({
             required: false
         });
 
-        let errors = string.validate(null);
+        let errors = string.validate('Hello World');
 
         chai.assert.equal(errors.length, 0);
     });
 
-    it('passed when value is not required and is null', function() {
-        let string = new String({
-            required: false
-        });
-
-        let errors = string.validate(null);
-
-        chai.assert.equal(errors.length, 0);
-    });
-
-    it('fails when value is a number', function() {
+    it('fails when a number is supplied', function() {
         let string = new String({
             required: false
         });
@@ -42,7 +32,7 @@ describe('String Validator', function() {
         chai.assert.equal(errors.length, 1);
     });
 
-    it('fails when object is supplied', function() {
+    it('fails when a object is supplied', function() {
         let string = new String({
             required: true
         });
@@ -52,12 +42,22 @@ describe('String Validator', function() {
         chai.assert.equal(errors.length, 1);
     });
 
-    it('fails when function is supplied', function() {
+    it('fails when a function is supplied', function() {
         let string = new String({
             required: true
         });
 
         let errors = string.validate(() => {});
+
+        chai.assert.equal(errors.length, 1);
+    });
+
+    it('fails when null is supplied', function() {
+        let string = new String({
+            required: true
+        });
+
+        let errors = string.validate(null);
 
         chai.assert.equal(errors.length, 1);
     });
