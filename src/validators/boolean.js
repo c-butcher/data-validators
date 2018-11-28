@@ -16,7 +16,7 @@ class Boolean extends Validator {
 
     validate(value) {
         let errors = [];
-        let isError = true;
+        let isError = false;
 
         if (typeof value !== 'boolean') {
             isError = true;

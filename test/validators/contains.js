@@ -1,5 +1,4 @@
 const chai = require('chai');
-const Validator = require('../../src/validator');
 const Contains = require('../../src/validators/contains');
 
 describe('Contains Validator', function() {

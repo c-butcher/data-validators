@@ -8,7 +8,7 @@ describe('Boolean Validator', function() {
 
         let errors = boolean.validate(false);
 
-        chai.assert.equal(errors.length, 1);
+        chai.assert.equal(errors.length, 0);
     });
 
     it('passes when required and is set to true', function() {
@@ -18,7 +18,7 @@ describe('Boolean Validator', function() {
 
         let errors = boolean.validate(true);
 
-        chai.assert.equal(errors.length, 1);
+        chai.assert.equal(errors.length, 0);
     });
 
     it('fails when number is supplied', function() {
