@@ -23,6 +23,7 @@
   "homepage": "https://github.com/c-butcher/data-validators#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "formatted-error": "^1.0.0",
     "mocha": "^5.2.0"
   }
 }

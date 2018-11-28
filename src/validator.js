@@ -1,4 +1,4 @@
-const ValidationError = require('../src/validation-error');
+const ValidationError = require('formatted-error');
 
 let validators = new Map();
 

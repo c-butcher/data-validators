@@ -1,5 +1,5 @@
 const Validator = require('../validator');
-const ValidationError = require('../validation-error');
+const ValidationError = require('formatted-error');
 
 class Choice extends Validator {
 
